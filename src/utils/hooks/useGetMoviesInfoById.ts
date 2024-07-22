@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 import { getMoviesInfoById } from "../actions/getMoviesInfoById"
 
-export const useGetMoviesInfoById = (endpoint: string, id: number) => {
+export const useGetMoviesInfoById = (id: number, endpoint?: string) => {
 	return useQuery({
-		queryKey: ["getMoviesInfoById", endpoint, id],
-		queryFn: () => getMoviesInfoById(endpoint, id)
+		queryKey: endpoint
+			? ["getMoviesInfoById", id, endpoint]
+			: ["getMoviesInfoById", id],
+		queryFn: () => getMoviesInfoById(id, endpoint)
 	})
 }
