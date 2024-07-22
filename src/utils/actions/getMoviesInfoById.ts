@@ -7,7 +7,7 @@ export const getMoviesInfoById = async (endpoint: string, id: number) => {
 	const response = await axios.get(baseUrl + id + endpoint, {
 		params: { language: "en-US" },
 		headers: {
-			Authorization: "Bearer " + process.env.NEXT_PUBLIC_MOVIE_API_ACCESS_TOKEN
+			Authorization: "Bearer " + process.env.MOVIE_API_ACCESS_TOKEN
 		}
 	})
 	return response.data.results
