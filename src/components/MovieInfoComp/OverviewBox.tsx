@@ -3,12 +3,15 @@ import { BsDot } from "react-icons/bs"
 import UserScoreCircle from "./UserScoreCircle"
 import { FaPlay } from "react-icons/fa"
 import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
-import { EMoviesEndpoints } from "@/enums/moviesEndpoints"
 import { TMovieInfo } from "@/types/MoviesTypes/types"
 import Link from "next/link"
+import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 
 const OverviewBox = async ({ movie }: { movie: TMovieInfo }) => {
-	const movieVideos = await getMoviesInfoById(movie.id, EMoviesEndpoints.VIDEOS)
+	const movieVideos = await getMoviesInfoById(
+		movie.id,
+		EMoviesInfoEndpoints.VIDEOS
+	)
 
 	const trailers = movieVideos.results.filter(
 		(video: { key: ""; name: string }) => video.name.includes("Trailer")
