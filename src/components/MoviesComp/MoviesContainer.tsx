@@ -1,4 +1,4 @@
-import { TMovie } from "@/types/AllFilmsTypes/types"
+import { TMovie } from "@/types/MoviesTypes/types"
 import MovieList from "./MovieList"
 import PaginationControls from "./PaginationControls"
 

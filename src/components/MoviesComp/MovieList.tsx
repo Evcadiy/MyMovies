@@ -1,6 +1,6 @@
 import { Box, Grid } from "@chakra-ui/react"
 import MovieCard from "./MovieCard"
-import { TMovie } from "@/types/AllFilmsTypes/types"
+import { TMovie } from "@/types/MoviesTypes/types"
 
 const MovieList = ({ movies }: { movies: TMovie[] }) => {
 	return (
