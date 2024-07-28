@@ -1,25 +1,7 @@
-export type TMovie = {
-	id: number
-	genre_ids: number[]
-	adult: boolean
-	title: string
-	overview: string
-	backdrop_path: string
-	original_language: string
-	original_title: string
-	popularity: number
-	poster_path: string
-	release_date: string
-	video: boolean
-	vote_average: number
-	vote_count: number
-}
-
 export type TMovieGenre = {
 	id: number
 	name: string
 }
-
 export type TProductionCompany = {
 	id: number
 	logo_path: string | null
@@ -36,7 +18,6 @@ export type TSpokenLanguage = {
 	iso_639_1: string
 	name: string
 }
-
 export type TMovieInfo = {
 	adult: boolean
 	backdrop_path: string
@@ -66,7 +47,7 @@ export type TMovieInfo = {
 	vote_count: number
 }
 
-type TActor = {
+export type TActor = {
 	adult: boolean
 	gender: number
 	id: number

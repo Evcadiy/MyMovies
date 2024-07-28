@@ -3,9 +3,9 @@
 import { Box, GridItem, Image, Text } from "@chakra-ui/react"
 import VoteInCircle from "./VoteInCircle"
 import { Colors } from "@/constants/Colors"
-import { TMovie } from "@/types/MoviesTypes/types"
 import { useRouter } from "next/navigation"
 import { ERoutes } from "@/enums/routesEn"
+import { TMovie } from "./types"
 
 const MovieCard = ({ movie }: { movie: TMovie }) => {
 	const router = useRouter()

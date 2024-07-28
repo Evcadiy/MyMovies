@@ -1,4 +1,5 @@
 export enum EMoviesInfoEndpoints {
 	VIDEOS = "/videos",
-	CREDITS = "/credits"
+	CREDITS = "/credits",
+	REVIEWS = "/reviews"
 }

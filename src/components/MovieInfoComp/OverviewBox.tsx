@@ -3,10 +3,10 @@ import { BsDot } from "react-icons/bs"
 import UserScoreCircle from "./UserScoreCircle"
 import { FaPlay } from "react-icons/fa"
 import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
-import { TMovieInfo } from "@/types/MoviesTypes/types"
 import Link from "next/link"
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 import { Colors } from "@/constants/Colors"
+import { TMovieInfo } from "./types"
 
 const OverviewBox = async ({ movie }: { movie: TMovieInfo }) => {
 	const movieVideos = await getMoviesInfoById(

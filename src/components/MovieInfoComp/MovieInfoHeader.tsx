@@ -1,9 +1,9 @@
-import { TMovieInfo } from "@/types/MoviesTypes/types"
 import BackgroundImage from "./BackgroundImage"
 import { Flex } from "@chakra-ui/react"
 import OverviewBox from "./OverviewBox"
 import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
 import MovieInfoImage from "./MovieInfoImage"
+import { TMovieInfo } from "./types"
 
 const MovieInfoHeader = async ({ id }: { id: number }) => {
 	const movie: TMovieInfo = await getMoviesInfoById(id)

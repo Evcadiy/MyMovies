@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react"
 import MovieInfoCastBox from "./MovieInfoCastBox"
 import MovieInfoHeader from "./MovieInfoHeader"
+import ReviewsList from "./ReviewsList"
 
 const MovieInfoContainer = ({ id }: { id: number }) => {
 	return (
@@ -13,9 +14,7 @@ const MovieInfoContainer = ({ id }: { id: number }) => {
 			>
 				<Flex direction={"column"} justify={"center"} align={"center"}>
 					<MovieInfoCastBox id={id} />
-					<Box>Another Info</Box>
-					<Box>Another Info</Box>
-					<Box>Another Info</Box>
+					<ReviewsList id={id} />
 				</Flex>
 				<Box w={"20vw"}>Right side Info</Box>
 			</Flex>
