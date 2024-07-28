@@ -6,6 +6,7 @@ import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
 import { TMovieInfo } from "@/types/MoviesTypes/types"
 import Link from "next/link"
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
+import { Colors } from "@/constants/Colors"
 
 const OverviewBox = async ({ movie }: { movie: TMovieInfo }) => {
 	const movieVideos = await getMoviesInfoById(
@@ -58,7 +59,7 @@ const OverviewBox = async ({ movie }: { movie: TMovieInfo }) => {
 						justifyContent={"center"}
 						gap={2}
 						transition={"color 0.2s"}
-						_hover={{ color: "gray" }}
+						_hover={{ color: Colors.gold }}
 					>
 						<FaPlay />
 						<Text>Watch the trailer</Text>

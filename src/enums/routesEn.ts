@@ -1,4 +1,5 @@
 export enum ERoutes {
 	HOME = "/",
-	MOVIES = "/movies"
+	MOVIES = "/movies",
+	CAST = "/cast"
 }

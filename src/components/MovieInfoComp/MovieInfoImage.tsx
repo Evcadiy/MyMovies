@@ -56,7 +56,12 @@ const MovieInfoImage = ({
 			<Modal isOpen={isOpen} onClose={onClose} size={"lg"}>
 				<ModalOverlay />
 				<ModalContent>
-					<ModalCloseButton color={"#fff"} _hover={{}} />
+					<ModalCloseButton
+						color={"#000"}
+						bgColor={"#fff"}
+						borderRadius={"full"}
+						_hover={{}}
+					/>
 					<Image
 						src={`https://image.tmdb.org/t/p/w500${poster_path}`}
 						alt={title}

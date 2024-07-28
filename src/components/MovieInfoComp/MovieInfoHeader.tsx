@@ -7,7 +7,6 @@ import MovieInfoImage from "./MovieInfoImage"
 
 const MovieInfoHeader = async ({ id }: { id: number }) => {
 	const movie: TMovieInfo = await getMoviesInfoById(id)
-	console.log(movie)
 	return (
 		<BackgroundImage backdrop={movie.backdrop_path}>
 			<Flex
