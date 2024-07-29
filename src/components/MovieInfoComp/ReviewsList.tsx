@@ -1,14 +1,21 @@
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
-import { Text } from "@chakra-ui/react"
+import { Flex, Text } from "@chakra-ui/react"
+import { TReview } from "./types"
+import ReviewListContainer from "./ReviewListContainer"
 
 const ReviewsList = async ({ id }: { id: number }) => {
-	const reviews = await getMoviesInfoById(id, EMoviesInfoEndpoints.REVIEWS)
+	const reviews: TReview = await getMoviesInfoById(
+		id,
+		EMoviesInfoEndpoints.REVIEWS
+	)
+
+	const reviewList = reviews.results
 
 	return (
-		<>
-			<Text>Reviews {reviews.results.length}</Text>
-		</>
+		<Flex direction={"column"} gap={2} w={"100%"}>
+			<ReviewListContainer reviews={reviewList} />
+		</Flex>
 	)
 }
 

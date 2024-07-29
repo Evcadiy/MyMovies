@@ -65,3 +65,28 @@ export type TActor = {
 export type TMovieCast = {
 	cast: TActor[]
 }
+
+export type TAuthorDetails = {
+	name: string
+	username: string
+	avatar_path: string | null
+	rating: number | null
+}
+
+export type TReviewResult = {
+	author: string
+	author_details: TAuthorDetails
+	content: string
+	created_at: string
+	id: string
+	updated_at: string
+	url: string
+}
+
+export type TReview = {
+	id: number
+	page: number
+	results: TReviewResult[]
+	total_pages: number
+	total_results: number
+}

@@ -14,17 +14,22 @@ const MovieInfoCastBox = async ({ id }: { id: number }) => {
 
 	return (
 		<VStack
-			p={{ base: 5, lg: 10 }}
 			spacing={4}
-			align="flex-start"
+			align={{ base: "center", xl: "flex-start" }}
 			direction={"column"}
-			w="100%"
+			w={"100%"}
 		>
-			<Heading as="h2" size={{ base: "md", xl: "lg" }}>
+			<Heading w={"100%"} as="h2" size={{ base: "md", xl: "lg" }}>
 				Top Billed Cast
 			</Heading>
 			<Flex
-				maxW={{ base: "300px", md: "600px", lg: "800px", xl: "1000px" }}
+				maxW={{
+					base: "300px",
+					sm: "450px",
+					md: "600px",
+					lg: "800px",
+					xl: "100%"
+				}}
 				overflowX={"scroll"}
 				overflowY={"hidden"}
 				py={5}
