@@ -17,7 +17,7 @@ const ReviewListContainer = ({ reviews }: { reviews: TReviewResult[] }) => {
 	return (
 		<>
 			{reviews.length > 0 && (
-				<>
+				<Flex direction={"column"} gap={2} w={"100%"}>
 					<Divider borderColor={"gray.600"} />
 					<Flex direction={"column"} gap={2} w={"100%"} pt={5} pb={8}>
 						<Text fontWeight={"500"} fontSize={"lg"}>
@@ -28,6 +28,7 @@ const ReviewListContainer = ({ reviews }: { reviews: TReviewResult[] }) => {
 								({ author, author_details, content, id, created_at }) => (
 									<ReviewCard
 										key={id}
+										id={id}
 										author={author}
 										author_details={author_details}
 										content={content}
@@ -50,7 +51,7 @@ const ReviewListContainer = ({ reviews }: { reviews: TReviewResult[] }) => {
 						</Flex>
 					</Flex>
 					<Divider borderColor={"gray.600"} />
-				</>
+				</Flex>
 			)}
 		</>
 	)

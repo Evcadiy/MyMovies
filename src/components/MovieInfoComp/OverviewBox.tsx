@@ -2,14 +2,16 @@ import { Box, Heading, Text, VStack } from "@chakra-ui/react"
 import { BsDot } from "react-icons/bs"
 import UserScoreCircle from "./UserScoreCircle"
 import { FaPlay } from "react-icons/fa"
-import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
 import Link from "next/link"
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 import { Colors } from "@/constants/Colors"
 import { TMovieInfo } from "./types"
+import { getInfoById } from "@/utils/actions/getInfoById"
+import { EInfoRoutes } from "@/enums/infoRoutes"
 
 const OverviewBox = async ({ movie }: { movie: TMovieInfo }) => {
-	const movieVideos = await getMoviesInfoById(
+	const movieVideos = await getInfoById(
+		EInfoRoutes.MOVIE,
 		movie.id,
 		EMoviesInfoEndpoints.VIDEOS
 	)

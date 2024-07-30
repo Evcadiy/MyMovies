@@ -1,4 +1,4 @@
-import { Box, Divider, Flex } from "@chakra-ui/react"
+import { Box, Flex } from "@chakra-ui/react"
 import MovieInfoCastBox from "./MovieInfoCastBox"
 import MovieInfoHeader from "./MovieInfoHeader"
 import ReviewsList from "./ReviewsList"

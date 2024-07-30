@@ -10,15 +10,17 @@ import {
 	Link
 } from "@chakra-ui/react"
 import { TReviewResult } from "./types"
+import { ERoutes } from "@/enums/routesEn"
 
 const ReviewCard = ({
 	author,
 	author_details,
 	content,
-	created_at
+	created_at,
+	id
 }: Pick<
 	TReviewResult,
-	"author" | "author_details" | "content" | "created_at"
+	"author" | "author_details" | "content" | "created_at" | "id"
 >) => {
 	const dateNumber = created_at.slice(8, 10)
 	const monthNumber = created_at.slice(5, 7)
@@ -77,7 +79,7 @@ const ReviewCard = ({
 				<Box>
 					<Text dangerouslySetInnerHTML={createMarkup(truncatedContent)} />
 					{content.length > 300 ? (
-						<Link href={``} textDecoration={"underline"}>
+						<Link href={`${ERoutes.REVIEW}/${id}`} textDecoration={"underline"}>
 							read the rest
 						</Link>
 					) : null}

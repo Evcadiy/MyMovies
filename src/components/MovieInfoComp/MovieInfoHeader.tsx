@@ -1,12 +1,13 @@
 import BackgroundImage from "./BackgroundImage"
 import { Flex } from "@chakra-ui/react"
 import OverviewBox from "./OverviewBox"
-import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
 import MovieInfoImage from "./MovieInfoImage"
 import { TMovieInfo } from "./types"
+import { getInfoById } from "@/utils/actions/getInfoById"
+import { EInfoRoutes } from "@/enums/infoRoutes"
 
 const MovieInfoHeader = async ({ id }: { id: number }) => {
-	const movie: TMovieInfo = await getMoviesInfoById(id)
+	const movie: TMovieInfo = await getInfoById(EInfoRoutes.MOVIE, id)
 	return (
 		<BackgroundImage backdrop={movie.backdrop_path}>
 			<Flex

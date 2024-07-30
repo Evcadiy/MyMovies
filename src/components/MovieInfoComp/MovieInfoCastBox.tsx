@@ -1,13 +1,15 @@
 import { Box, Image, Text, VStack, Heading, Flex, Link } from "@chakra-ui/react"
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 import { Colors } from "@/constants/Colors"
-import { getMoviesInfoById } from "@/utils/actions/getMoviesInfoById"
 import { FaArrowRight } from "react-icons/fa"
 import { ERoutes } from "@/enums/routesEn"
 import { TMovieCast } from "./types"
+import { getInfoById } from "@/utils/actions/getInfoById"
+import { EInfoRoutes } from "@/enums/infoRoutes"
 
 const MovieInfoCastBox = async ({ id }: { id: number }) => {
-	const movieCast: TMovieCast = await getMoviesInfoById(
+	const movieCast: TMovieCast = await getInfoById(
+		EInfoRoutes.MOVIE,
 		id,
 		EMoviesInfoEndpoints.CREDITS
 	)
