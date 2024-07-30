@@ -64,13 +64,21 @@ const ReviewCard = ({
 						/>
 						<Box>
 							<Heading size="md">{author_details.username}</Heading>
-							<Text fontStyle={"italic"} fontSize={"14px"}>
-								Written by
-								<Text px={1} as={"span"} fontWeight={"bold"}>
-									{author_details.name}
+							{author_details.name ? (
+								<Text fontStyle={"italic"} fontSize={"14px"}>
+									Written by
+									<Text px={1} as={"span"} fontWeight={"bold"}>
+										{author_details.name}
+									</Text>
+									{`on` + ` ` + monthName} {dateNumber},{" "}
+									{created_at.slice(0, 4)}
 								</Text>
-								{`on` + ` ` + monthName} {dateNumber}, {created_at.slice(0, 4)}
-							</Text>
+							) : (
+								<Text fontStyle={"italic"} fontSize={"14px"}>
+									{`Written on` + ` ` + monthName} {dateNumber},{" "}
+									{created_at.slice(0, 4)}
+								</Text>
+							)}
 						</Box>
 					</Flex>
 				</Flex>

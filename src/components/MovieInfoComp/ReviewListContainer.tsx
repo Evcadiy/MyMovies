@@ -8,10 +8,6 @@ import ReviewCard from "./ReviewCard"
 const ReviewListContainer = ({ reviews }: { reviews: TReviewResult[] }) => {
 	const [showAllReviews, setShowAllReviews] = useState(false)
 
-	const handleReadAllReviews = () => {
-		setShowAllReviews(true)
-	}
-
 	const displayedReviews = showAllReviews ? reviews : reviews.slice(0, 1)
 
 	return (
@@ -36,16 +32,28 @@ const ReviewListContainer = ({ reviews }: { reviews: TReviewResult[] }) => {
 									/>
 								)
 							)}
-							{!showAllReviews && reviews.length > 2 && (
+							{!showAllReviews && reviews.length > 1 && (
 								<Button
-									justifyContent={"flex-start"}
+									w={"135px"}
 									p={0}
-									onClick={handleReadAllReviews}
+									onClick={() => setShowAllReviews(true)}
 									bgColor={"inherit"}
 									color={"#fff"}
 									_hover={{ color: "gray" }}
 								>
 									Read All Reviews
+								</Button>
+							)}
+							{showAllReviews && reviews.length > 1 && (
+								<Button
+									w={"120px"}
+									p={0}
+									onClick={() => setShowAllReviews(false)}
+									bgColor={"inherit"}
+									color={"#fff"}
+									_hover={{ color: "gray" }}
+								>
+									Close Reviews
 								</Button>
 							)}
 						</Flex>
