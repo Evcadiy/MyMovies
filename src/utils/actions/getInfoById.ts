@@ -14,7 +14,7 @@ export const getInfoById = async (
 			? baseUrl + `${route}/${id}/${endpoint}`
 			: baseUrl + `${route}/${id} `,
 		{
-			params: { language: "en-US" },
+			params: { language: "en" },
 			headers: {
 				Authorization: "Bearer " + process.env.MOVIE_API_ACCESS_TOKEN
 			}

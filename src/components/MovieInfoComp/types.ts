@@ -90,3 +90,20 @@ export type TReview = {
 	total_pages: number
 	total_results: number
 }
+
+export type TMovieImageDetails = {
+	aspect_ratio: number
+	height: number
+	iso_639_1: string | null
+	file_path: string
+	vote_average: number
+	vote_count: number
+	width: number
+}
+
+export type TMovieImages = {
+	backdrops: [TMovieImageDetails]
+	id: number
+	logos: [TMovieImageDetails]
+	posters: [TMovieImageDetails]
+}
