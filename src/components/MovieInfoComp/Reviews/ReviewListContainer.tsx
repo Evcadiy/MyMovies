@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Flex, Text, Button, Divider, Heading } from "@chakra-ui/react"
-import { TReviewResult } from "./types"
+import { Flex, Button, Divider, Heading } from "@chakra-ui/react"
+import { TReviewResult } from "../types"
 import ReviewCard from "./ReviewCard"
 
 const ReviewListContainer = ({ reviews }: { reviews: TReviewResult[] }) => {

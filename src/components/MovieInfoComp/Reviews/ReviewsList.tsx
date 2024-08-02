@@ -1,5 +1,5 @@
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
-import { TReview } from "./types"
+import { TReview } from "../types"
 import ReviewListContainer from "./ReviewListContainer"
 import { getInfoById } from "@/utils/actions/getInfoById"
 import { EInfoRoutes } from "@/enums/infoRoutes"

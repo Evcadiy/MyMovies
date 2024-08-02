@@ -3,7 +3,7 @@ import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 import { Colors } from "@/constants/Colors"
 import { FaArrowRight } from "react-icons/fa"
 import { ERoutes } from "@/enums/routesEn"
-import { TMovieCast } from "./types"
+import { TMovieCast } from "../types"
 import { getInfoById } from "@/utils/actions/getInfoById"
 import { EInfoRoutes } from "@/enums/infoRoutes"
 

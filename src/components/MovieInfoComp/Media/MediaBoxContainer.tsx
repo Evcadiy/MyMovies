@@ -1,9 +1,10 @@
 "use client"
 
-import { Box, Button, Flex, Heading, Image, VStack } from "@chakra-ui/react"
-import { TMovieImages } from "./types"
+import { Button, Flex, Heading, Image, Link, VStack } from "@chakra-ui/react"
+import { TMovieImages } from "../types"
 import { useState } from "react"
 import { Colors } from "@/constants/Colors"
+import { ERoutes } from "@/enums/routesEn"
 
 const MediaBoxContainer = ({ movieImages }: { movieImages: TMovieImages }) => {
 	const { backdrops, posters, logos } = movieImages
@@ -41,11 +42,11 @@ const MediaBoxContainer = ({ movieImages }: { movieImages: TMovieImages }) => {
 			direction={"column"}
 			w={"100%"}
 		>
-			<Box w={"100%"} display={"flex"} gap={{ base: 3, sm: 10 }}>
-				<Heading as="h2" size={"md"}>
-					Media
-				</Heading>
-				<Flex gap={3}>
+			<Heading w={"100%"} as="h2" size={"md"}>
+				Media
+			</Heading>
+			<Flex w={"100%"} justify={"space-between"} wrap={"wrap"}>
+				<Flex gap={3} py={1}>
 					{categories
 						.filter(category => category.show)
 						.map(category => (
@@ -61,28 +62,33 @@ const MediaBoxContainer = ({ movieImages }: { movieImages: TMovieImages }) => {
 									)
 								}
 								isActive={selectedCategory === category.value}
-								_active={{ color: Colors.gold }}
+								py={1}
+								_active={{ borderBottom: "2px solid #fff", borderRadius: 0 }}
 							>
 								{category.label}
 							</Button>
 						))}
 				</Flex>
-			</Box>
+				{images.length > 10 && (
+					<Link
+						color={Colors.gold}
+						pt={{ base: 5, sm: 0 }}
+						href={`${ERoutes.IMAGES}/${selectedCategory}`}
+						_hover={{ color: "gray" }}
+					>
+						View all {selectedCategory}
+					</Link>
+				)}
+			</Flex>
 			<Flex
-				maxW={{
-					base: "300px",
-					sm: "450px",
-					md: "600px",
-					lg: "800px",
-					xl: "100%"
-				}}
+				maxW={"100%"}
 				overflowX={shouldScroll ? "scroll" : "hidden"}
 				overflowY={"hidden"}
 				py={5}
 				justify={"flex-start"}
 				align={"center"}
 			>
-				{images.map(image => (
+				{images.slice(0, 10).map(image => (
 					<Image
 						key={image.file_path}
 						src={

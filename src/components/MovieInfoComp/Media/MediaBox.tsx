@@ -1,5 +1,5 @@
 import { getInfoById } from "@/utils/actions/getInfoById"
-import { TMovieImages } from "./types"
+import { TMovieImages } from "../types"
 import { EInfoRoutes } from "@/enums/infoRoutes"
 import { EMoviesInfoEndpoints } from "@/enums/moviesInfoEndPoints"
 import MediaBoxContainer from "./MediaBoxContainer"

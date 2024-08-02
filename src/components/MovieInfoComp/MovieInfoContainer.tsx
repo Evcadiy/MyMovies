@@ -1,8 +1,8 @@
 import { Box, Flex } from "@chakra-ui/react"
-import MovieInfoCastBox from "./MovieInfoCastBox"
 import MovieInfoHeader from "./MovieInfoHeader"
-import ReviewsList from "./ReviewsList"
-import MediaBox from "./MediaBox"
+import MovieInfoCastBox from "./Cast/MovieInfoCastBox"
+import ReviewsList from "./Reviews/ReviewsList"
+import MediaBox from "./Media/MediaBox"
 
 const MovieInfoContainer = ({ id }: { id: number }) => {
 	return (

@@ -9,8 +9,8 @@ import {
 	Avatar,
 	Link
 } from "@chakra-ui/react"
-import { TReviewResult } from "./types"
 import { ERoutes } from "@/enums/routesEn"
+import { TReviewResult } from "../types"
 
 const ReviewCard = ({
 	author,
