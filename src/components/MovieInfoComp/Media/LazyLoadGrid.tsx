@@ -13,8 +13,8 @@ interface LazyLoadGridProps {
 
 const LazyLoadGrid = ({
 	images,
-	initialCount = 30,
-	loadMoreCount = 30
+	initialCount = 32,
+	loadMoreCount = 32
 }: LazyLoadGridProps) => {
 	const [visibleCount, setVisibleCount] = useState(initialCount)
 
@@ -51,22 +51,13 @@ const LazyLoadGrid = ({
 						}}
 						_focus={{ transform: "scale(1)" }}
 					>
-						<Box
+						<Image
+							src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
+							alt={image.file_path}
 							w={"100%"}
 							h={"100%"}
-							overflow={"hidden"}
-							display={"flex"}
-							alignItems={"center"}
-							justifyContent={"center"}
 							borderRadius={"md"}
-						>
-							<Image
-								src={`https://image.tmdb.org/t/p/original/${image.file_path}`}
-								alt={image.file_path}
-								objectFit={"cover"}
-								borderRadius={"md"}
-							/>
-						</Box>
+						/>
 					</GridItem>
 				))}
 			</Grid>
