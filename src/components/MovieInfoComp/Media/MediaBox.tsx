@@ -11,7 +11,7 @@ const MediaBox = async ({ id: movieId }: { id: number }) => {
 		EMoviesInfoEndpoints.IMAGES
 	)
 
-	return <MediaBoxContainer movieImages={movieImages} />
+	return <MediaBoxContainer movieImages={movieImages} id={movieId} />
 }
 
 export default MediaBox

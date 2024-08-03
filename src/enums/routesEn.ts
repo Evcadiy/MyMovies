@@ -3,5 +3,5 @@ export enum ERoutes {
 	MOVIES = "/movies",
 	CAST = "/cast",
 	REVIEW = "/review",
-	IMAGES = "/movies/:id/images"
+	IMAGES = "/images"
 }

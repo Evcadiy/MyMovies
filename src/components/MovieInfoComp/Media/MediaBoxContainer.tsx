@@ -6,7 +6,13 @@ import { useState } from "react"
 import { Colors } from "@/constants/Colors"
 import { ERoutes } from "@/enums/routesEn"
 
-const MediaBoxContainer = ({ movieImages }: { movieImages: TMovieImages }) => {
+const MediaBoxContainer = ({
+	movieImages,
+	id
+}: {
+	movieImages: TMovieImages
+	id: number
+}) => {
 	const { backdrops, posters, logos } = movieImages
 
 	const getFirstAvailableCategory = () => {
@@ -45,7 +51,7 @@ const MediaBoxContainer = ({ movieImages }: { movieImages: TMovieImages }) => {
 			<Heading w={"100%"} as="h2" size={"md"}>
 				Media
 			</Heading>
-			<Flex w={"100%"} justify={"space-between"} wrap={"wrap"}>
+			<Flex w={"100%"} justify={"space-between"} wrap={"wrap"} align={"center"}>
 				<Flex gap={3} py={1}>
 					{categories
 						.filter(category => category.show)
@@ -72,8 +78,8 @@ const MediaBoxContainer = ({ movieImages }: { movieImages: TMovieImages }) => {
 				{images.length > 10 && (
 					<Link
 						color={Colors.gold}
-						pt={{ base: 5, sm: 0 }}
-						href={`${ERoutes.IMAGES}/${selectedCategory}`}
+						mt={{ base: 5, sm: 0 }}
+						href={`${ERoutes.MOVIES}/${id}/${ERoutes.IMAGES}/${selectedCategory}`}
 						_hover={{ color: "gray" }}
 					>
 						View all {selectedCategory}

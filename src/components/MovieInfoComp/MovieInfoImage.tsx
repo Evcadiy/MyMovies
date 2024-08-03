@@ -29,6 +29,7 @@ const MovieInfoImage = ({
 				<Image
 					src={`https://image.tmdb.org/t/p/w500${poster_path}`}
 					alt={title}
+					w={"100%"}
 					objectFit="cover"
 					borderRadius="lg"
 				/>

@@ -8,7 +8,7 @@ export const getInfo = async (
 	endpoint: string,
 	page?: string | string[] | 1
 ) => {
-	const baseUrl = "https://api.themoviedb.org/3"
+	const baseUrl = "https://api.themoviedb.org/3/"
 	const response = await axios.get(baseUrl + route + endpoint, {
 		params: { language: "en-US", page },
 		headers: {
