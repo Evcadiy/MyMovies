@@ -15,5 +15,5 @@ export const getInfo = async (
 			Authorization: "Bearer " + process.env.MOVIE_API_ACCESS_TOKEN
 		}
 	})
-	return response.data.results
+	return response.data
 }

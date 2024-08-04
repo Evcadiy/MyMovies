@@ -10,12 +10,13 @@ const Movies = async ({
 	searchParams: { [key: string]: string | string[] | undefined }
 }) => {
 	const page = searchParams["page"] ?? 1
-
-	const movies = await getInfo(
+	const movieList = await getInfo(
 		EInfoRoutes.MOVIE,
 		EMoviesEndpoints.POPULAR,
 		page
 	)
+
+	const movies = movieList.results
 
 	return (
 		<Box

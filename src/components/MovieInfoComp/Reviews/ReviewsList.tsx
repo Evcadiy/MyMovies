@@ -5,15 +5,15 @@ import { getInfoById } from "@/utils/actions/getInfoById"
 import { EInfoRoutes } from "@/enums/infoRoutes"
 
 const ReviewsList = async ({ id }: { id: number }) => {
-	const reviews: TReview = await getInfoById(
+	const reviewList: TReview = await getInfoById(
 		EInfoRoutes.MOVIE,
 		id,
 		EMoviesInfoEndpoints.REVIEWS
 	)
 
-	const reviewList = reviews.results
+	const reviews = reviewList.results
 
-	return <ReviewListContainer reviews={reviewList} />
+	return <ReviewListContainer reviews={reviews} />
 }
 
 export default ReviewsList
