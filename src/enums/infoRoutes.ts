@@ -2,5 +2,6 @@ export enum EInfoRoutes {
 	MOVIE = "/movie",
 	VIDEOS = "/videos",
 	CREDITS = "/credits",
-	REVIEW = "/review"
+	REVIEW = "/review",
+	SIMILAR = "/similar"
 }

@@ -3,6 +3,7 @@ import MovieInfoHeader from "./MovieInfoHeader"
 import MovieInfoCastBox from "./Cast/MovieInfoCastBox"
 import ReviewsList from "./Reviews/ReviewsList"
 import MediaBox from "./Media/MediaBox"
+import RecommendationsBox from "./Recommendations/RecommendationsBox"
 
 const MovieInfoContainer = ({ id }: { id: number }) => {
 	return (
@@ -32,6 +33,7 @@ const MovieInfoContainer = ({ id }: { id: number }) => {
 						<MovieInfoCastBox id={id} />
 						<ReviewsList id={id} />
 						<MediaBox id={id} />
+						<RecommendationsBox id={id} />
 					</Flex>
 					<Box w={"20vw"}>Right side Info</Box>
 				</Flex>
