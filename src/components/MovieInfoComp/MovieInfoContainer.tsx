@@ -4,21 +4,21 @@ import MovieInfoCastBox from "./Cast/MovieInfoCastBox"
 import ReviewsList from "./Reviews/ReviewsList"
 import MediaBox from "./Media/MediaBox"
 import RecommendationsBox from "./Recommendations/RecommendationsBox"
+import RightSideInfoComp from "./RightSideInfo/RightSideInfoComp"
 
 const MovieInfoContainer = ({ id }: { id: number }) => {
 	return (
 		<>
 			<MovieInfoHeader id={id} />
-			<Flex direction={"column"} align={"center"} p={5}>
+			<Box w={"100vw"}>
 				<Flex
-					justify={"center"}
 					direction={{ base: "column", xl: "row" }}
 					align={{ base: "center", xl: "flex-start" }}
-					maxW={"1400px"}
+					maxW={"1500px"}
+					mx="auto"
 				>
 					<Flex
 						direction={"column"}
-						align={"center"}
 						maxW={{
 							base: "320px",
 							sm: "480px",
@@ -27,7 +27,7 @@ const MovieInfoContainer = ({ id }: { id: number }) => {
 							xl: "1100px"
 						}}
 						py={{ base: 5, lg: 10 }}
-						px={{ base: 5, xl: 20 }}
+						px={{ base: 5, xl: 12 }}
 						gap={7}
 					>
 						<MovieInfoCastBox id={id} />
@@ -35,9 +35,9 @@ const MovieInfoContainer = ({ id }: { id: number }) => {
 						<MediaBox id={id} />
 						<RecommendationsBox id={id} />
 					</Flex>
-					<Box w={"20vw"}>Right side Info</Box>
+					<RightSideInfoComp id={id} />
 				</Flex>
-			</Flex>
+			</Box>
 		</>
 	)
 }

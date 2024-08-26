@@ -3,5 +3,6 @@ export enum EInfoRoutes {
 	VIDEOS = "/videos",
 	CREDITS = "/credits",
 	REVIEW = "/review",
-	SIMILAR = "/similar"
+	SIMILAR = "/similar",
+	KEYWORDS = "/keywords"
 }

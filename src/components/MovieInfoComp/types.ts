@@ -107,3 +107,8 @@ export type TMovieImages = {
 	logos: [TMovieImageDetails]
 	posters: [TMovieImageDetails]
 }
+
+export type TKeyword = {
+	id: number
+	name: string
+}

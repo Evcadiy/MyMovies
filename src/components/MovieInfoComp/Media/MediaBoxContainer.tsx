@@ -42,6 +42,8 @@ const MediaBoxContainer = ({
 		{ label: "Logos", value: "logos", show: !!logos.length }
 	]
 
+	console.log("MediaPage Render")
+
 	return (
 		<>
 			{images.length > 0 && (
@@ -53,7 +55,7 @@ const MediaBoxContainer = ({
 						viewport={{ once: true }}
 						style={{ width: "100%" }}
 					>
-						<Heading w={"100%"} as="h2" size={"md"}>
+						<Heading w={"100%"} as="h2" size={"md"} pb={2}>
 							Media
 						</Heading>
 						<Flex
