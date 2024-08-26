@@ -21,7 +21,7 @@ const LazyLoadGrid = ({
 	const visibleImages = images.slice(0, visibleCount)
 
 	return (
-		<Box maxW={"1200px"} margin={"0 auto"}>
+		<Box maxW={"1200px"} margin={"0 auto"} py={5}>
 			<Grid
 				px={2}
 				w={"100%"}

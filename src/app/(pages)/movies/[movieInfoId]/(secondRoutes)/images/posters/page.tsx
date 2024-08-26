@@ -11,8 +11,6 @@ const Posters = async ({
 }: {
 	params: { movieInfoId: string }
 }) => {
-	const movie = await getInfoById(EInfoRoutes.MOVIE, movieInfoId)
-
 	const images: TMovieImages = await getInfoById(
 		EInfoRoutes.MOVIE,
 		movieInfoId,
@@ -21,12 +19,7 @@ const Posters = async ({
 
 	const { posters } = images
 
-	return (
-		<Box py={5}>
-			<ViewAllHeader movie={movie} />
-			<LazyLoadGrid images={posters} />
-		</Box>
-	)
+	return <LazyLoadGrid images={posters} />
 }
 
 export default Posters

@@ -21,7 +21,7 @@ const ViewAllHeader = ({ movie }: { movie: TMovieInfo }) => {
 			align={"center"}
 			justify={"center"}
 			bgColor={Colors.mainRed}
-			mb={5}
+			my={8}
 		>
 			<Flex
 				maxW={"1200px"}
