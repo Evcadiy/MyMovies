@@ -1,17 +1,24 @@
 "use client"
 
+import { ERoutes } from "@/enums/routesEn"
 import { Flex, Image, Text } from "@chakra-ui/react"
 import { useRouter } from "next/navigation"
 const CastItem = ({
+	id,
 	name,
 	job,
 	profile_path
 }: {
+	id: number
 	name: string
 	job: string
 	profile_path: string | null
 }) => {
 	const router = useRouter()
+
+	const goToPerson = () => {
+		router.push(`${ERoutes.PERSON}/${id}`)
+	}
 
 	return (
 		<Flex direction={{ base: "column", sm: "row" }} px={2}>
@@ -29,10 +36,12 @@ const CastItem = ({
 				objectPosition={"center"}
 				alt={name}
 				cursor={"pointer"}
-				onClick={() => router.push("/")}
+				onClick={goToPerson}
 			/>
 			<Flex direction={"column"} justify={"center"} pl={{ base: 0, sm: 5 }}>
-				<Text fontWeight={"bold"}>{name}</Text>
+				<Text fontWeight={"bold"} cursor={"pointer"} onClick={goToPerson}>
+					{name}
+				</Text>
 				<Text fontWeight={"300"} fontSize={"sm"}>
 					{job}
 				</Text>
