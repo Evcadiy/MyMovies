@@ -4,5 +4,6 @@ export enum EInfoRoutes {
 	CREDITS = "/credits",
 	REVIEW = "/review",
 	SIMILAR = "/similar",
-	KEYWORDS = "/keywords"
+	KEYWORDS = "/keywords",
+	PERSON = "/person"
 }
