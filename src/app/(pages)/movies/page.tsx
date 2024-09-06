@@ -1,6 +1,7 @@
 import MoviesContainer from "@/components/MoviesComp/MoviesContainer"
+import { EInfoRoutes } from "@/enums/infoRoutes"
 import { EMoviesEndpoints } from "@/enums/moviesEndpoints"
-import { getMovies } from "@/utils/actions/getMovies"
+import { getInfo } from "@/utils/actions/getInfo"
 import { Box, Text } from "@chakra-ui/react"
 
 const Movies = async ({
@@ -9,8 +10,13 @@ const Movies = async ({
 	searchParams: { [key: string]: string | string[] | undefined }
 }) => {
 	const page = searchParams["page"] ?? 1
+	const movieList = await getInfo(
+		EInfoRoutes.MOVIE,
+		EMoviesEndpoints.POPULAR,
+		page
+	)
 
-	const movies = await getMovies(EMoviesEndpoints.POPULAR, page)
+	const movies = movieList.results
 
 	return (
 		<Box

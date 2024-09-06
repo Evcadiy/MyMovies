@@ -1,5 +1,6 @@
 export enum EMoviesEndpoints {
-	TOP_RATED = "/top_rated",
+	NOW_PLAYING = "/now_playing",
 	POPULAR = "/popular",
-	VIDEOS = "/videos"
+	TOP_RATED = "/top_rated",
+	UPCOMING = "/upcoming"
 }

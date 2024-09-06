@@ -14,3 +14,10 @@ export type TMovie = {
 	vote_average: number
 	vote_count: number
 }
+
+export type TMovieList = {
+	page: number
+	results: TMovie[]
+	total_pages: number
+	total_results: number
+}

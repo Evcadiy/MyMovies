@@ -1,11 +1,22 @@
+"use client"
+
 import { Box, GridItem, Image, Text } from "@chakra-ui/react"
 import VoteInCircle from "./VoteInCircle"
 import { Colors } from "@/constants/Colors"
-import { TMovie } from "@/types/AllFilmsTypes/types"
+import { useRouter } from "next/navigation"
+import { ERoutes } from "@/enums/routesEn"
+import { TMovie } from "./types"
 
 const MovieCard = ({ movie }: { movie: TMovie }) => {
+	const router = useRouter()
+
+	const goToInfo = () => {
+		router.push(`${ERoutes.MOVIES}/${movie.id}`)
+	}
+
 	return (
 		<GridItem
+			onClick={goToInfo}
 			key={movie.id}
 			pos={"relative"}
 			padding={3}
@@ -13,8 +24,8 @@ const MovieCard = ({ movie }: { movie: TMovie }) => {
 			borderRadius={{ base: "md", md: "lg" }}
 			transition="transform 0.2s"
 			_hover={{ transform: "scale(1.05)", cursor: "pointer" }}
-			minWidth="200px"
-			maxWidth="250px"
+			minWidth={{ base: "220px", md: "225px" }}
+			maxWidth={{ base: "220px", md: "250px" }}
 		>
 			<Box
 				width="100%"
