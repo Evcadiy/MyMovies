@@ -20,39 +20,45 @@ const MovieInfoImage = ({
 	return (
 		<>
 			<Box
-				onClick={onOpen}
+				onClick={poster_path ? onOpen : undefined}
 				pos={"relative"}
 				w={{ base: "70%", lg: "400px" }}
 				display={"flex"}
 				justifyContent={"center"}
 			>
 				<Image
-					src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+					src={
+						poster_path
+							? `https://image.tmdb.org/t/p/w500${poster_path}`
+							: "https://via.placeholder.com/200x300/FFF?text=No%20Image"
+					}
 					alt={title}
 					w={"100%"}
 					objectFit="cover"
 					borderRadius="lg"
 				/>
-				<Box
-					position="absolute"
-					top="0"
-					left="0"
-					w="100%"
-					h="100%"
-					bg="rgba(0, 0, 0, 0.8)"
-					opacity="0"
-					display="flex"
-					justifyContent="center"
-					alignItems="center"
-					transition="opacity 0.3s ease"
-					_hover={{ opacity: 1, cursor: "pointer" }}
-					borderRadius="lg"
-				>
-					<Box display="flex" alignItems="center" gap={2}>
-						<LuExpand />
-						<Text fontSize={"xl"}>Expand</Text>
+				{poster_path && (
+					<Box
+						position="absolute"
+						top="0"
+						left="0"
+						w="100%"
+						h="100%"
+						bg="rgba(0, 0, 0, 0.8)"
+						opacity="0"
+						display="flex"
+						justifyContent="center"
+						alignItems="center"
+						transition="opacity 0.3s ease"
+						_hover={{ opacity: 1, cursor: "pointer" }}
+						borderRadius="lg"
+					>
+						<Box display="flex" alignItems="center" gap={2}>
+							<LuExpand />
+							<Text fontSize={"xl"}>Expand</Text>
+						</Box>
 					</Box>
-				</Box>
+				)}
 			</Box>
 			<Modal isOpen={isOpen} onClose={onClose} size={"lg"}>
 				<ModalOverlay />

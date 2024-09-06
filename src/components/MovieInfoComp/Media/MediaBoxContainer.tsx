@@ -42,8 +42,6 @@ const MediaBoxContainer = ({
 		{ label: "Logos", value: "logos", show: !!logos.length }
 	]
 
-	console.log("MediaPage Render")
-
 	return (
 		<>
 			{images.length > 0 && (
