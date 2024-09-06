@@ -13,10 +13,10 @@ export type TPerson = {
 	place_of_birth: string
 	popularity: number
 	profile_path: string
-	known_for?: KnownFor[]
+	known_for?: TKnownFor[]
 }
 
-type KnownFor = {
+type TKnownFor = {
 	backdrop_path: string
 	id: number
 	title: string

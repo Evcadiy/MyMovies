@@ -1,6 +1,5 @@
 "use client"
 
-import { ERoutes } from "@/enums/routesEn"
 import { Box, Button, Text } from "@chakra-ui/react"
 import { useRouter, useSearchParams } from "next/navigation"
 import {
@@ -8,7 +7,13 @@ import {
 	HiOutlineArrowSmallRight
 } from "react-icons/hi2"
 
-const PaginationControls = ({ totalPages }: { totalPages: number }) => {
+const PaginationControls = ({
+	totalPages,
+	route
+}: {
+	totalPages: number
+	route: string
+}) => {
 	const router = useRouter()
 	const searchParams = useSearchParams()
 
@@ -16,26 +21,26 @@ const PaginationControls = ({ totalPages }: { totalPages: number }) => {
 
 	const prevPageHandler = () => {
 		if (page > 1) {
-			router.push(`${ERoutes.MOVIES}?page=${page - 1}`)
+			router.push(`${route}?page=${page - 1}`)
 		}
 	}
 
 	const nextPageHandler = () => {
 		if (page < totalPages) {
-			router.push(`${ERoutes.MOVIES}?page=${page + 1}`)
+			router.push(`${route}?page=${page + 1}`)
 		}
 	}
 
 	const selectPageHandler = (pageNumber: number) => {
 		if (pageNumber >= 1 && pageNumber <= totalPages) {
-			router.push(`${ERoutes.MOVIES}?page=${pageNumber}`)
+			router.push(`${route}?page=${pageNumber}`)
 		}
 	}
 
 	const generatePageRange = () => {
 		const range = []
-		const start = Math.max(1, page - 2)
-		const end = Math.min(totalPages, page + 2)
+		const start = Math.max(1, page - 1)
+		const end = Math.min(totalPages, page + 1)
 
 		for (let i = start; i <= end; i++) {
 			range.push(i)
@@ -52,50 +57,50 @@ const PaginationControls = ({ totalPages }: { totalPages: number }) => {
 			display="flex"
 			alignItems="center"
 			justifyContent="center"
-			gap={4}
+			gap={{ base: 2, sm: 4 }}
 		>
 			<Button
 				onClick={prevPageHandler}
-				px={3}
+				px={{ base: 2, sm: 3 }}
 				display={page > 1 ? "" : "none"}
 				disabled={page > 1}
+				fontSize={{ base: "sm", sm: "md" }}
 			>
-				<HiOutlineArrowSmallLeft size={"25px"} />
+				<HiOutlineArrowSmallLeft size={"20px"} />
 			</Button>
 
 			{page > 3 && (
-				<Button onClick={() => selectPageHandler(1)} mx={1}>
-					<Text>1</Text>
+				<Button
+					onClick={() => selectPageHandler(1)}
+					mx={1}
+					fontSize={{ base: "sm", sm: "md" }}
+				>
+					<Text fontSize={{ base: "sm", sm: "md" }}>1</Text>
 				</Button>
 			)}
 
-			{page > 4 && <Text>...</Text>}
+			{page > 4 && <Text fontSize={{ base: "sm", sm: "md" }}>...</Text>}
 
 			{pageRange.map(pageNumber => (
 				<Button
 					key={pageNumber}
 					onClick={() => selectPageHandler(pageNumber)}
-					mx={1}
 					border={"1px solid #fff"}
 					variant={pageNumber === page ? "solid" : ""}
+					fontSize={{ base: "sm", sm: "md" }}
+					p={{ base: 1, sm: 2 }}
 				>
-					<Text>{pageNumber}</Text>
+					<Text fontSize={{ base: "sm", sm: "md" }}>{pageNumber}</Text>
 				</Button>
 			))}
 
-			{page < totalPages - 3 && <Text>...</Text>}
-
-			{page < totalPages - 2 && (
-				<Button mx={1}>
-					<Text>{totalPages}</Text>
-				</Button>
-			)}
 			<Button
 				onClick={nextPageHandler}
-				px={3}
+				px={{ base: 2, sm: 3 }}
 				display={page < totalPages ? "" : "none"}
+				fontSize={{ base: "sm", sm: "md" }}
 			>
-				<HiOutlineArrowSmallRight size={"25px"} />
+				<HiOutlineArrowSmallRight size={"20px"} />
 			</Button>
 		</Box>
 	)

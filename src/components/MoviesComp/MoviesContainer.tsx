@@ -1,3 +1,4 @@
+import { ERoutes } from "@/enums/routesEn"
 import MovieList from "./MovieList"
 import PaginationControls from "./PaginationControls"
 import { TMovie } from "./types"
@@ -12,7 +13,7 @@ const MoviesContainer = ({
 	return (
 		<>
 			<MovieList movies={movies} />
-			<PaginationControls totalPages={totalPages} />
+			<PaginationControls totalPages={totalPages} route={ERoutes.MOVIES} />
 		</>
 	)
 }
