@@ -17,7 +17,7 @@ const Movies = async ({
 	)
 
 	const movies = movieList.results
-
+	const totalPages = movieList.total_pages
 	return (
 		<Box
 			display={"flex"}
@@ -28,7 +28,7 @@ const Movies = async ({
 			<Text fontSize={"3xl"} fontWeight={"bold"} paddingTop={5}>
 				MyMovies
 			</Text>
-			<MoviesContainer movies={movies} />
+			<MoviesContainer movies={movies} totalPages={totalPages} />
 		</Box>
 	)
 }
