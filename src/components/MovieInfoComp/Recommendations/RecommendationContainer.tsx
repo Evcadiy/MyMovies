@@ -7,9 +7,11 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 
 const RecommendationContainer = ({
-	recommendations
+	recommendations,
+	heading
 }: {
 	recommendations: TMovie[]
+	heading: string
 }) => {
 	const shouldScroll = recommendations.length * 300 > 800
 	const router = useRouter()
@@ -29,7 +31,7 @@ const RecommendationContainer = ({
 					style={{ width: "100%" }}
 				>
 					<Heading w={"100%"} as="h2" size={"md"}>
-						Recommendations
+						{heading}
 					</Heading>
 					<Flex
 						w={"100%"}

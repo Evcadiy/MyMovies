@@ -29,8 +29,10 @@ const PersonPageContainer = ({ person }: { person: TPerson }) => {
 				</Flex>
 				<PersonalInfo person={person} />
 			</Box>
-			<PersonalBio name={person.name} biography={person.biography} />
-			<PersonalKnownForList id={person.id} />
+			<Flex direction={"column"}>
+				<PersonalBio name={person.name} biography={person.biography} />
+				<PersonalKnownForList id={person.id} />
+			</Flex>
 		</Flex>
 	)
 }

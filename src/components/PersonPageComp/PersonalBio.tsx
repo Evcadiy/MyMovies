@@ -19,7 +19,7 @@ const PersonalBio = ({
 			{biography ? (
 				<ReadMoreText text={biography} />
 			) : (
-				<Text>We dont have a biography for Jesús Evita.</Text>
+				<Text>We dont have a biography for {name}</Text>
 			)}
 		</Box>
 	)

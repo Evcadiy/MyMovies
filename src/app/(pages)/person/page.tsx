@@ -6,16 +6,10 @@ import { EMoviesEndpoints } from "@/enums/moviesEndpoints"
 import { ERoutes } from "@/enums/routesEn"
 import { getInfo } from "@/utils/actions/getInfo"
 
-const PersonListPage = async ({
-	searchParams
-}: {
-	searchParams: { [key: string]: string | string[] | undefined }
-}) => {
-	const page = searchParams["page"] ?? 1
+const PersonListPage = async () => {
 	const peopleList: TPersonList = await getInfo(
 		EInfoRoutes.PERSON,
-		EMoviesEndpoints.POPULAR,
-		page
+		EMoviesEndpoints.POPULAR
 	)
 
 	const people = peopleList.results

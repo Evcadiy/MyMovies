@@ -2,6 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react"
 import { TPerson } from "./types"
 
 const PersonalInfo = ({ person }: { person: TPerson }) => {
+	if (person.birthday === null) return <></>
 	const personYear =
 		new Date().getFullYear() - Number(person.birthday.slice(0, 4))
 
