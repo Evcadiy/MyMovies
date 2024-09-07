@@ -11,7 +11,12 @@ const RecommendationsBox = async ({ id }: { id: number }) => {
 
 	const recommendations = RecommendationsList.results
 
-	return <RecommendationContainer recommendations={recommendations} />
+	return (
+		<RecommendationContainer
+			recommendations={recommendations}
+			heading="Recommendations"
+		/>
+	)
 }
 
 export default RecommendationsBox
