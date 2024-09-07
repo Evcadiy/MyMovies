@@ -1,7 +1,6 @@
 "use client"
 
-import { Colors } from "@/constants/Colors"
-import { Box, Button, Input, Text } from "@chakra-ui/react"
+import { Box, Input, Text } from "@chakra-ui/react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { SlMagnifier } from "react-icons/sl"
@@ -23,13 +22,17 @@ const Search = () => {
 	}
 
 	return (
-		<Box
-			display="flex"
-			justifyContent="center"
-			w={"full"}
-			borderBottom={"0.1px solid #f5f5f5"}
-		>
-			<Box pos={"relative"} w={"full"} mx={{ base: 0, lg: "200px" }} my={2}>
+		<Box w={"full"} pos={"relative"}>
+			<Box
+				borderBottom={"0.1px solid #f5f5f5"}
+				pos={"absolute"}
+				mt={-4}
+				py={2}
+				top={0}
+				left={{ base: "0", md: "50%" }}
+				transform={{ base: "0", md: "translateX(-50%)" }}
+				w={{ base: "100%", md: "55%" }}
+			>
 				{searchTerm && (
 					<Text
 						cursor={"pointer"}
@@ -37,7 +40,7 @@ const Search = () => {
 						p={2}
 						pos={"absolute"}
 						right={4}
-						top={1}
+						top={3}
 						onClick={() => setSearchTerm("")}
 					>
 						<RxCross1 />
@@ -49,7 +52,7 @@ const Search = () => {
 					p={2}
 					pos={"absolute"}
 					left={0}
-					top={1}
+					top={3}
 					onClick={() => setSearchTerm("")}
 				>
 					<SlMagnifier />
