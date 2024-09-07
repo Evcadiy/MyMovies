@@ -18,23 +18,34 @@ const PaginationControls = ({
 	const searchParams = useSearchParams()
 
 	const page = Number(searchParams.get("page")) || 1
+	const query = searchParams.get("query") || ""
+	const category = searchParams.get("category") || ""
+
+	const buildUrl = (pageNumber: number) => {
+		let url = `${route}?page=${pageNumber}`
+		if (query) {
+			url += `&query=${query}`
+		}
+		if (category) {
+			url += `&category=${category}`
+		}
+		return url
+	}
 
 	const prevPageHandler = () => {
 		if (page > 1) {
-			router.push(`${route}?page=${page - 1}`)
+			router.push(buildUrl(page - 1))
 		}
 	}
 
 	const nextPageHandler = () => {
 		if (page < totalPages) {
-			router.push(`${route}?page=${page + 1}`)
+			router.push(buildUrl(page + 1))
 		}
 	}
 
 	const selectPageHandler = (pageNumber: number) => {
-		if (pageNumber >= 1 && pageNumber <= totalPages) {
-			router.push(`${route}?page=${pageNumber}`)
-		}
+		router.push(buildUrl(pageNumber))
 	}
 
 	const generatePageRange = () => {
