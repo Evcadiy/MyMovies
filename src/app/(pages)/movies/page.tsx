@@ -45,7 +45,6 @@ const Movies = async ({
 			alignItems={"center"}
 			justifyContent={"center"}
 		>
-			<Header />
 			{movieList.results.length === 0 ? (
 				<>
 					<Text mt={5}>There are no movies that matched your query.</Text>

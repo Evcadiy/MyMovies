@@ -5,12 +5,18 @@ import { EInfoRoutes } from "@/enums/infoRoutes"
 import { EMoviesEndpoints } from "@/enums/moviesEndpoints"
 import { ERoutes } from "@/enums/routesEn"
 import { getInfo } from "@/utils/actions/getInfo"
-import { Suspense } from "react"
 
-const PersonListPage = async () => {
+const PersonListPage = async ({
+	searchParams
+}: {
+	searchParams: { [key: string]: string | string[] | undefined }
+}) => {
+	const page = searchParams["page"] ?? 1
+
 	const peopleList: TPersonList = await getInfo(
 		EInfoRoutes.PERSON,
-		EMoviesEndpoints.POPULAR
+		EMoviesEndpoints.POPULAR,
+		page
 	)
 
 	const people = peopleList.results
@@ -19,9 +25,7 @@ const PersonListPage = async () => {
 	return (
 		<>
 			<PersonList people={people} />
-			<Suspense fallback={<div>Loading...</div>}>
-				<PaginationControls totalPages={totalPages} route={ERoutes.PERSON} />
-			</Suspense>
+			<PaginationControls totalPages={totalPages} route={ERoutes.PERSON} />
 		</>
 	)
 }
