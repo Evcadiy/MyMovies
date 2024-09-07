@@ -18,10 +18,16 @@ const PaginationControls = ({
 	const searchParams = useSearchParams()
 
 	const page = Number(searchParams.get("page")) || 1
+	const query = searchParams.get("query") || ""
+
+	console.log(query)
 
 	const prevPageHandler = () => {
 		if (page > 1) {
 			router.push(`${route}?page=${page - 1}`)
+		}
+		if (query && page > 1) {
+			router.push(`${route}?query=${query}&page=${page - 1}`)
 		}
 	}
 
@@ -29,11 +35,17 @@ const PaginationControls = ({
 		if (page < totalPages) {
 			router.push(`${route}?page=${page + 1}`)
 		}
+		if (query && page < totalPages) {
+			router.push(`${route}?query=${query}&page=${page + 1}`)
+		}
 	}
 
 	const selectPageHandler = (pageNumber: number) => {
-		if (pageNumber >= 1 && pageNumber <= totalPages) {
+		if (pageNumber) {
 			router.push(`${route}?page=${pageNumber}`)
+		}
+		if (query) {
+			router.push(`${route}?query=${query}&page=${pageNumber}`)
 		}
 	}
 
