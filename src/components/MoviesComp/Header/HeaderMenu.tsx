@@ -21,9 +21,14 @@ const HeaderMenu = ({ title }: HeaderMenuProps) => {
 	const router = useRouter()
 
 	const handleCategorySelect = (category: string) => {
-		router.push(`/movies?category=${category}`)
-	}
+		if (category) {
+			router.push(`${ERoutes.MOVIES}?category=${category}`)
+		} else {
+			router.push(`${ERoutes.PERSON}`)
+		}
 
+		onClose()
+	}
 	return (
 		<Menu isOpen={isOpen}>
 			<MenuButton
@@ -38,6 +43,7 @@ const HeaderMenu = ({ title }: HeaderMenuProps) => {
 				{title}
 			</MenuButton>
 			<MenuList
+				zIndex={"100"}
 				mt={-2}
 				color={"#000"}
 				onMouseEnter={onOpen}
