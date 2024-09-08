@@ -14,7 +14,7 @@ const PersonList = ({ people }: { people: TPerson[] }) => {
 	}
 
 	return (
-		<Box maxW="1400px" m={"0 auto"} pb={12}>
+		<Box maxW="1400px" m={"0 auto"} pb={12} mt={6}>
 			<Grid
 				templateColumns={{
 					base: "repeat(1, 1fr)",

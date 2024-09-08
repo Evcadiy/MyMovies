@@ -17,8 +17,8 @@ const Header = () => {
 
 	return (
 		<>
-			<Box w={"full"} py={5} px={12}>
-				<Flex justify={"space-between"} align={"center"}>
+			<Box w={"full"} py={5} px={12} mb={6}>
+				<Flex justify={"space-between"} align={"center"} pb={4}>
 					<Flex gap={12} flex={1} align={"center"}>
 						<Text
 							display={{ base: "none", md: "block" }}
@@ -38,8 +38,8 @@ const Header = () => {
 						{isSearch ? <RxCross1 /> : <SlMagnifier />}
 					</Box>
 				</Flex>
+				{isSearch && <Search />}
 			</Box>
-			{isSearch && <Search />}
 		</>
 	)
 }

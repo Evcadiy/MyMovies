@@ -1,3 +1,4 @@
+import ErrorSearch from "@/components/MoviesComp/Header/ErrorSearch"
 import Header from "@/components/MoviesComp/Header/Header"
 import MoviesContainer from "@/components/MoviesComp/MoviesContainer"
 import { Colors } from "@/constants/Colors"
@@ -45,13 +46,8 @@ const Movies = async ({
 			alignItems={"center"}
 			justifyContent={"center"}
 		>
-			{movieList.results.length === 0 ? (
-				<>
-					<Text mt={5}>There are no movies that matched your query.</Text>
-					<Link color={Colors.gold} href={ERoutes.MOVIES} mt={5}>
-						Go back
-					</Link>
-				</>
+			{movies.length === 0 ? (
+				<ErrorSearch route={ERoutes.MOVIES} title={"movies"} />
 			) : (
 				<MoviesContainer movies={movies} totalPages={totalPages} />
 			)}

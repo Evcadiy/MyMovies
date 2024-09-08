@@ -4,7 +4,7 @@ import { TMovie } from "./types"
 
 const MovieList = ({ movies }: { movies: TMovie[] }) => {
 	return (
-		<Box maxW="1200px" p={5} mt={6}>
+		<Box maxW="1200px" pb={4}>
 			<Grid
 				templateColumns={{
 					base: "repeat(1, 1fr)",
