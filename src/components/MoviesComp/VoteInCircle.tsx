@@ -19,7 +19,7 @@ const VoteInCircle = ({ vote }: { vote: string }) => {
 			border={`2px solid ${color}`}
 			borderRadius={"100%"}
 		>
-			{vote}
+			{Number(vote) > 0 ? vote : "-"}
 		</Box>
 	)
 }

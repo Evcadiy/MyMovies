@@ -1,13 +1,11 @@
 import ErrorSearch from "@/components/MoviesComp/Header/ErrorSearch"
-import Header from "@/components/MoviesComp/Header/Header"
 import MoviesContainer from "@/components/MoviesComp/MoviesContainer"
-import { Colors } from "@/constants/Colors"
 import { EInfoRoutes } from "@/enums/infoRoutes"
 import { EMoviesEndpoints } from "@/enums/moviesEndpoints"
 import { ERoutes } from "@/enums/routesEn"
 import { getInfo } from "@/utils/actions/getInfo"
 import { getInfoBySearch } from "@/utils/actions/getInfoBySeacrh"
-import { Box, Link, Text } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 
 const Movies = async ({
 	searchParams
