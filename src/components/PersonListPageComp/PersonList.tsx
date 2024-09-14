@@ -40,12 +40,23 @@ const PersonList = ({ people }: { people: TPerson[] }) => {
 						boxShadow={"dark-lg"}
 						onClick={() => goToPerson(person.id)}
 					>
-						<Image
-							src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`}
-							alt={person.profile_path}
-							maxW={{ base: "250px", md: "260px" }}
-							maxH={{ base: "350px", md: "400px" }}
-						/>
+						{person.profile_path ? (
+							<Image
+								src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`}
+								alt={person.profile_path}
+								maxW={{ base: "250px", md: "260px" }}
+								maxH={{ base: "350px", md: "400px" }}
+							/>
+						) : (
+							<Image
+								src={"/images/person-placeholder.jpg"}
+								alt="person"
+								minW={{ base: "230px", md: "260px" }}
+								maxW={{ base: "230px", md: "260px" }}
+								minH={{ base: "350px", md: "390px" }}
+								maxH={{ base: "350px", md: "390px" }}
+							/>
+						)}
 						<Box p={5} bgColor={Colors.mainRed}>
 							<Text>{person.name}</Text>
 						</Box>
