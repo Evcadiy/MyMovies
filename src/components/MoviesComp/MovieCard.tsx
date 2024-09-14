@@ -33,17 +33,22 @@ const MovieCard = ({ movie }: { movie: TMovie }) => {
 				overflow="hidden"
 				borderRadius={{ base: "md", md: "lg" }}
 			>
-				<Image
-					src={
-						movie.poster_path
-							? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-							: "/images/movie-placeholder.jpg"
-					}
-					alt={movie.title}
-					objectFit="cover"
-					w="100%"
-					h="100%"
-				/>
+				{movie.poster_path ? (
+					<Image
+						src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+						alt={movie.title}
+						objectFit="cover"
+						w="100%"
+						h="100%"
+					/>
+				) : (
+					<Image
+						src="/images/movie-placeholder.jpg"
+						alt={movie.title}
+						h="100%"
+						w={"226px"}
+					/>
+				)}
 				<VoteInCircle vote={movie.vote_average.toFixed(1)} />
 			</Box>
 			<Box
