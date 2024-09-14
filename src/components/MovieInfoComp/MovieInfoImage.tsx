@@ -8,6 +8,8 @@ import {
 	ModalContent,
 	ModalCloseButton
 } from "@chakra-ui/react"
+import { usePathname, useSearchParams } from "next/navigation"
+import { ERoutes } from "@/enums/routesEn"
 const MovieInfoImage = ({
 	title,
 	poster_path
@@ -16,6 +18,12 @@ const MovieInfoImage = ({
 	poster_path: string
 }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure()
+	const pathname = usePathname()
+	const isPerson = pathname.includes(ERoutes.PERSON)
+
+	const imgPlaceholder = isPerson
+		? "/images/person-placeholder.jpg"
+		: "/images/movie-placeholder.jpg"
 
 	return (
 		<>
@@ -26,17 +34,17 @@ const MovieInfoImage = ({
 				display={"flex"}
 				justifyContent={"center"}
 			>
-				<Image
-					src={
-						poster_path
-							? `https://image.tmdb.org/t/p/w500${poster_path}`
-							: "https://via.placeholder.com/200x300/FFF?text=No%20Image"
-					}
-					alt={title}
-					w={"100%"}
-					objectFit="cover"
-					borderRadius="lg"
-				/>
+				{poster_path ? (
+					<Image
+						src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+						alt={title}
+						w={"100%"}
+						objectFit="cover"
+						borderRadius="lg"
+					/>
+				) : (
+					<Image src={imgPlaceholder} alt={title} borderRadius="lg" />
+				)}
 				{poster_path && (
 					<Box
 						position="absolute"

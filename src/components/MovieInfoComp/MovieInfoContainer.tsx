@@ -12,22 +12,18 @@ const MovieInfoContainer = ({ id }: { id: number }) => {
 			<MovieInfoHeader id={id} />
 			<Box w={"100vw"}>
 				<Flex
+					pb={10}
 					direction={{ base: "column", xl: "row" }}
 					align={{ base: "center", xl: "flex-start" }}
-					maxW={"1500px"}
+					maxW={"1300px"}
 					mx="auto"
 				>
 					<Flex
 						direction={"column"}
-						maxW={{
-							base: "320px",
-							sm: "480px",
-							md: "750px",
-							lg: "900px",
-							xl: "1100px"
-						}}
+						minW={{ base: "100%", xl: "1000px" }}
+						maxW={{ base: "100%", xl: "1000px" }}
 						py={{ base: 5, lg: 10 }}
-						px={{ base: 5, xl: 12 }}
+						px={{ base: 4, xl: 12 }}
 						gap={7}
 					>
 						<MovieInfoCastBox id={id} />
