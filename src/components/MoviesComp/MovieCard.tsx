@@ -37,7 +37,7 @@ const MovieCard = ({ movie }: { movie: TMovie }) => {
 					src={
 						movie.poster_path
 							? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-							: "https://via.placeholder.com/200x300/FFF?text=No%20Image"
+							: "/images/movie-placeholder.jpg"
 					}
 					alt={movie.title}
 					objectFit="cover"
