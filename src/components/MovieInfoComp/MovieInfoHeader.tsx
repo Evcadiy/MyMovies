@@ -11,7 +11,8 @@ const MovieInfoHeader = async ({ id }: { id: number }) => {
 	return (
 		<BackgroundImage backdrop={movie.backdrop_path}>
 			<Flex
-				maxW={"1400px"}
+				maxW={{ base: "100%", xl: "1200px" }}
+				minW={{ base: "100%", xl: "1200px" }}
 				height="100%"
 				position="relative"
 				zIndex={1}

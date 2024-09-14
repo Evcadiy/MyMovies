@@ -14,7 +14,7 @@ const MovieInfoCastBox = async ({ id }: { id: number }) => {
 
 	return (
 		<>
-			{movieCast.cast.length && (
+			{movieCast.cast.length > 0 && (
 				<>
 					<VStack
 						spacing={4}

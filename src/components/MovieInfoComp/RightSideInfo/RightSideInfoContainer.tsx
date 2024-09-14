@@ -44,28 +44,30 @@ const RightSideInfoContainer = ({
 			</Box>
 			<Box>
 				<Text fontWeight={"bold"}>Budget</Text>
-				<Text>{budgetFormatted}</Text>
+				<Text>{Number(budgetFormatted) > 0 ? budgetFormatted : "-"}</Text>
 			</Box>
 			<Box>
 				<Text fontWeight={"bold"}>Revenue</Text>
-				<Text>{revenueFormatted}</Text>
+				<Text>{Number(revenueFormatted) > 0 ? revenueFormatted : "-"}</Text>
 			</Box>
 			<Text fontSize={"lg"} fontWeight={"bold"}>
 				Keywords
 			</Text>
-			<Flex maxW={"100%"} flexWrap={"wrap"} gap={3}>
-				{keywords.map((keyword: TKeyword) => (
-					<Text
-						fontSize={"sm"}
-						border={"1px solid"}
-						rounded={"md"}
-						p={2}
-						key={keyword.id}
-					>
-						{keyword.name}
-					</Text>
-				))}
-			</Flex>
+			{keywords && (
+				<Flex maxW={"100%"} flexWrap={"wrap"} gap={3}>
+					{keywords.map((keyword: TKeyword) => (
+						<Text
+							fontSize={"sm"}
+							border={"1px solid"}
+							rounded={"md"}
+							p={2}
+							key={keyword.id}
+						>
+							{keyword.name}
+						</Text>
+					))}
+				</Flex>
+			)}
 		</Flex>
 	)
 }

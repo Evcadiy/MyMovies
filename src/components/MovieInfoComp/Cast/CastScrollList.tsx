@@ -20,10 +20,12 @@ const CastScrollList = ({
 		router.push(`${ERoutes.PERSON}/${id}`)
 	}
 
+	const shouldScroll = movieCast.cast.length * 300 > 800
+
 	return (
 		<Flex
 			w={"100%"}
-			overflowX={"scroll"}
+			overflowX={shouldScroll ? "scroll" : "hidden"}
 			overflowY={"hidden"}
 			py={5}
 			justify={"flex-start"}
@@ -43,11 +45,12 @@ const CastScrollList = ({
 						src={
 							actor.profile_path
 								? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
-								: "https://via.placeholder.com/200x300/FFF?text=No%20Image"
+								: "/images/person-placeholder.jpg"
 						}
 						alt={actor.name}
 						borderRadius={"10px 10px 0 0"}
 						h={{ base: "170px", xl: "225px" }}
+						w={"150px"}
 					/>
 					<Box
 						p={2}
@@ -56,7 +59,7 @@ const CastScrollList = ({
 						h="80px"
 						overflow="hidden"
 					>
-						<Text fontWeight="bold" fontSize={{ base: "xs", xl: "sm" }}>
+						<Text fontWeight="bold" fontSize={"xs"}>
 							{actor.name}
 						</Text>
 						<Text fontSize={{ base: "xx-small", xl: "xs" }}>
@@ -65,20 +68,22 @@ const CastScrollList = ({
 					</Box>
 				</Box>
 			))}
-			<Link
-				minW={{ base: "110px", xl: "150px" }}
-				maxW={{ base: "130px", xl: "180px" }}
-				display={"flex"}
-				justifyContent={"center"}
-				alignItems={"center"}
-				gap={2}
-				_hover={{ textDecoration: "none", color: Colors.gold }}
-				href={`${ERoutes.MOVIES}/${id}${ERoutes.CAST}`}
-				fontSize={{ base: "xs", xl: "sm" }}
-			>
-				View More
-				<FaArrowRight />
-			</Link>
+			{movieCast.cast.length > 10 && (
+				<Link
+					minW={{ base: "110px", xl: "150px" }}
+					maxW={{ base: "130px", xl: "180px" }}
+					display={"flex"}
+					justifyContent={"center"}
+					alignItems={"center"}
+					gap={2}
+					_hover={{ textDecoration: "none", color: Colors.gold }}
+					href={`${ERoutes.MOVIES}/${id}${ERoutes.CAST}`}
+					fontSize={{ base: "xs", xl: "sm" }}
+				>
+					View More
+					<FaArrowRight />
+				</Link>
+			)}
 		</Flex>
 	)
 }

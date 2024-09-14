@@ -58,11 +58,12 @@ const RecommendationContainer = ({
 									src={
 										movie.poster_path
 											? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-											: "https://via.placeholder.com/200x300/FFF?text=No%20Image"
+											: "/images/movie-placeholder.jpg"
 									}
 									alt={movie.title}
 									borderRadius={"10px"}
 									h={{ base: "170px", md: "265px" }}
+									w={"177px"}
 								/>
 								<Box
 									position="absolute"

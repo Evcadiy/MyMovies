@@ -26,7 +26,7 @@ const CastItem = ({
 				src={
 					profile_path
 						? `https://image.tmdb.org/t/p/w200${profile_path}`
-						: "https://via.placeholder.com/200x300/FFF?text=No%20Image"
+						: "/images/person-placeholder.jpg"
 				}
 				minW={"70px"}
 				maxW={"70px"}
