@@ -1,7 +1,12 @@
-import React from "react"
+"use client"
+
+import { ERoutes } from "@/enums/routesEn"
+import { useRouter } from "next/navigation"
 
 const HomePage = () => {
-	return <div>HomePage</div>
+	const router = useRouter()
+
+	return router.push(`${ERoutes.MOVIES}`)
 }
 
 export default HomePage
