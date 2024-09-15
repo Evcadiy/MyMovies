@@ -1,12 +1,10 @@
 "use client"
 
 import { ERoutes } from "@/enums/routesEn"
-import { useRouter } from "next/navigation"
+import { redirect } from "next/navigation"
 
 const HomePage = () => {
-	const router = useRouter()
-
-	return router.push(`${ERoutes.MOVIES}`)
+	return redirect(ERoutes.MOVIES)
 }
 
 export default HomePage
