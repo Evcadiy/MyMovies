@@ -1,6 +1,12 @@
 "use client"
 
-import { Box, Image, Text, useDisclosure } from "@chakra-ui/react"
+import {
+	Box,
+	Image,
+	Text,
+	useDisclosure,
+	useMediaQuery
+} from "@chakra-ui/react"
 import { LuExpand } from "react-icons/lu"
 import {
 	Modal,
@@ -8,7 +14,7 @@ import {
 	ModalContent,
 	ModalCloseButton
 } from "@chakra-ui/react"
-import { usePathname, useSearchParams } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { ERoutes } from "@/enums/routesEn"
 const MovieInfoImage = ({
 	title,
@@ -20,7 +26,7 @@ const MovieInfoImage = ({
 	const { isOpen, onOpen, onClose } = useDisclosure()
 	const pathname = usePathname()
 	const isPerson = pathname.includes(ERoutes.PERSON)
-
+	const [isMobile] = useMediaQuery("(min-width: 768px)")
 	const imgPlaceholder = isPerson
 		? "/images/person-placeholder.jpg"
 		: "/images/movie-placeholder.jpg"
@@ -45,7 +51,7 @@ const MovieInfoImage = ({
 				) : (
 					<Image src={imgPlaceholder} alt={title} borderRadius="lg" />
 				)}
-				{poster_path && (
+				{poster_path && !isMobile && (
 					<Box
 						position="absolute"
 						top="0"

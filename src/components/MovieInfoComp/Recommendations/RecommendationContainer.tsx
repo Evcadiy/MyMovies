@@ -63,7 +63,7 @@ const RecommendationContainer = ({
 									alt={movie.title}
 									borderRadius={"10px"}
 									h={{ base: "170px", md: "265px" }}
-									w={"177px"}
+									w={{ base: "115px", md: "177px" }}
 								/>
 								<Box
 									position="absolute"

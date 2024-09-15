@@ -25,8 +25,9 @@ const RightSideInfoContainer = ({
 	return (
 		<Flex
 			pr={{ base: 0, sm: 10 }}
-			w={{ base: "280px", sm: "400px" }}
+			w={"100%"}
 			pt={10}
+			px={5}
 			direction={"column"}
 			gap={5}
 		>
