@@ -6,11 +6,11 @@ const VoteInCircle = ({ vote }: { vote: string }) => {
 	return (
 		<Box
 			pos={"absolute"}
-			right={4}
-			top={4}
-			fontSize={"1.2rem"}
-			width={"50px"}
-			h={"50px"}
+			right={{ base: 2, sm: 4 }}
+			top={{ base: 2, sm: 4 }}
+			fontSize={{ base: "0.8rem", sm: "1.2rem" }}
+			width={{ base: "30px", sm: "50px" }}
+			h={{ base: "30px", sm: "50px" }}
 			display={"flex"}
 			alignItems={"center"}
 			justifyContent={"center"}

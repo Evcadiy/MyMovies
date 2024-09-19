@@ -19,19 +19,25 @@ const MovieCard = ({ movie }: { movie: TMovie }) => {
 			onClick={goToInfo}
 			key={movie.id}
 			pos={"relative"}
-			padding={3}
+			padding={{ base: 1, sm: 3 }}
 			boxShadow={"dark-lg"}
 			borderRadius={{ base: "md", md: "lg" }}
 			transition="transform 0.2s"
-			_hover={{ transform: "scale(1.05)", cursor: "pointer" }}
-			minWidth={{ base: "220px", md: "225px" }}
-			maxWidth={{ base: "220px", md: "250px" }}
+			_hover={{
+				"@media (max-width: 768px)": {
+					transform: "scale(1)"
+				},
+				transform: "scale(1.05)",
+				cursor: "pointer"
+			}}
+			minWidth={{ base: "140px", sm: "225px" }}
+			maxWidth={{ base: "140px", sm: "250px" }}
 		>
 			<Box
 				width="100%"
-				height={{ base: "300px", md: "340px" }}
+				height={{ base: "220px", sm: "340px" }}
 				overflow="hidden"
-				borderRadius={{ base: "md", md: "lg" }}
+				borderRadius={{ base: "md", sm: "lg" }}
 			>
 				{movie.poster_path ? (
 					<Image
@@ -54,15 +60,15 @@ const MovieCard = ({ movie }: { movie: TMovie }) => {
 			<Box
 				px={3}
 				fontWeight={"bold"}
-				fontSize={{ base: "0.9rem", md: "1.1rem" }}
-				height={{ base: "70px", md: "90px" }}
+				fontSize={{ base: "0.7rem", sm: "1.1rem" }}
+				height={{ base: "50px", sm: "90px" }}
 				display={"flex"}
 				justifyContent={"center"}
 				alignItems={"center"}
 				gap={3}
 				bgColor={Colors.mainRed}
 				mt={3}
-				borderRadius={{ base: "md", md: "lg" }}
+				borderRadius={{ base: "md", sm: "lg" }}
 				_hover={{ bgColor: Colors.secondaryRed }}
 			>
 				<Text textAlign="center">

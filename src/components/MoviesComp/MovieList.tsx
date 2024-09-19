@@ -7,7 +7,7 @@ const MovieList = ({ movies }: { movies: TMovie[] }) => {
 		<Box maxW="1200px" pb={4}>
 			<Grid
 				templateColumns={{
-					base: "repeat(1, 1fr)",
+					base: "repeat(2, 1fr)",
 					sm: "repeat(2, 1fr)",
 					md: "repeat(3, 1fr)",
 					lg: "repeat(4, 1fr)"
