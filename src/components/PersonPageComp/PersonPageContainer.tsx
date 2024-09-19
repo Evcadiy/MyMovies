@@ -20,6 +20,8 @@ const PersonPageContainer = ({ person }: { person: TPerson }) => {
 			<Box>
 				<Flex
 					maxW={{ base: "full", lg: "300px" }}
+					minH={"303px"}
+					minW={"202px"}
 					maxH={"90%"}
 					justify={"center"}
 				>

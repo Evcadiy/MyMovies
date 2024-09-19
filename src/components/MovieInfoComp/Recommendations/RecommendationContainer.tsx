@@ -24,7 +24,7 @@ const RecommendationContainer = ({
 		<>
 			{recommendations.length > 0 && (
 				<motion.div
-					initial={{ opacity: 0, translateY: 40 }}
+					initial={{ opacity: 0, translateY: 20 }}
 					whileInView={{ opacity: 1, translateY: 0 }}
 					transition={{ duration: 1, ease: "easeInOut" }}
 					viewport={{ once: true }}
