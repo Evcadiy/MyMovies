@@ -10,7 +10,8 @@ const PersonPageContainer = ({ person }: { person: TPerson }) => {
 		<Flex
 			maxW={"1400px"}
 			mx={"auto"}
-			p={10}
+			py={{ base: 5, lg: 10 }}
+			px={4}
 			gap={10}
 			h={"100%"}
 			wrap={{ base: "wrap", lg: "nowrap" }}
@@ -29,7 +30,7 @@ const PersonPageContainer = ({ person }: { person: TPerson }) => {
 				</Flex>
 				<PersonalInfo person={person} />
 			</Box>
-			<Flex direction={"column"}>
+			<Flex direction={"column"} gap={10} mt={6} minW={"100px"} maxW={"full"}>
 				<PersonalBio name={person.name} biography={person.biography} />
 				<PersonalKnownForList id={person.id} />
 			</Flex>
