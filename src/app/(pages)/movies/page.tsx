@@ -1,4 +1,4 @@
-import ErrorSearch from "@/components/MoviesComp/Header/ErrorSearch"
+import ErrorSearch from "@/components/UI/Header/ErrorSearch"
 import MoviesContainer from "@/components/MoviesComp/MoviesContainer"
 import { EInfoRoutes } from "@/enums/infoRoutes"
 import { EMoviesEndpoints } from "@/enums/moviesEndpoints"

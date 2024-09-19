@@ -1,4 +1,4 @@
-import ErrorSearch from "@/components/MoviesComp/Header/ErrorSearch"
+import ErrorSearch from "@/components/UI/Header/ErrorSearch"
 import PaginationControls from "@/components/MoviesComp/PaginationControls"
 import PersonList from "@/components/PersonListPageComp/PersonList"
 import { EInfoRoutes } from "@/enums/infoRoutes"

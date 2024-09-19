@@ -20,7 +20,7 @@ const HeaderMenu = ({ title }: HeaderMenuProps) => {
 
 	const router = useRouter()
 
-	const handleCategorySelect = (category: string) => {
+	const handleCategorySelect = (category?: string) => {
 		if (category) {
 			router.push(`${ERoutes.MOVIES}?category=${category}`)
 		} else {
@@ -65,9 +65,7 @@ const HeaderMenu = ({ title }: HeaderMenuProps) => {
 						</MenuItem>
 					</>
 				) : (
-					<MenuItem onClick={() => router.push(ERoutes.PERSON)}>
-						Popular
-					</MenuItem>
+					<MenuItem onClick={() => handleCategorySelect()}>Popular</MenuItem>
 				)}
 			</MenuList>
 		</Menu>

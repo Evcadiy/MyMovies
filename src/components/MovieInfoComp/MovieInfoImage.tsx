@@ -26,7 +26,7 @@ const MovieInfoImage = ({
 	const { isOpen, onOpen, onClose } = useDisclosure()
 	const pathname = usePathname()
 	const isPerson = pathname.includes(ERoutes.PERSON)
-	const [isMobile] = useMediaQuery("(min-width: 768px)")
+	const [isMobile] = useMediaQuery("(max-width: 768px)")
 	const imgPlaceholder = isPerson
 		? "/images/person-placeholder.jpg"
 		: "/images/movie-placeholder.jpg"
